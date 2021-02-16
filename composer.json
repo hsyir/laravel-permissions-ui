@@ -1,0 +1,24 @@
+{
+    "name": "hsyir/laravel-permissions-ui",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hossein",
+            "email": "hosseinyaghmaee@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Hsy\\Permissions\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hsy\\Permissions\\Tests\\": "tests"
+        }
+    },
+    "require": {
+        "illuminate/support": "8.0"
+    }
+}

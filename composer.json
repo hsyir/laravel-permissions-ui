@@ -1,24 +1,35 @@
 {
-    "name": "hsyir/laravel-permissions-ui",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Hossein",
-            "email": "hosseinyaghmaee@gmail.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "autoload": {
-        "psr-4": {
-            "Hsy\\Permissions\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Hsy\\Permissions\\Tests\\": "tests"
-        }
-    },
-    "require": {
-        "illuminate/support": "8.0"
+  "name": "hsyir/laravel-permissions-ui",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Hossein",
+      "email": "hosseinyaghmaee@gmail.com"
     }
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Hsy\\Permissions\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Hsy\\Permissions\\Tests\\": "tests"
+    }
+  },
+  "require": {
+    "illuminate/support": "6.0|7.0|8.0",
+    "spatie/laravel-permission": "4.0"
+  },
+  "extra": {
+    "laravel": {
+      "aliases": {
+        "Answering": "Hsy\\Permissions\\Facades\\Permissions"
+      },
+      "providers": [
+        "Hsy\\Permissions\\HsyPermissionsServiceProvider"
+      ]
+    }
+  }
 }

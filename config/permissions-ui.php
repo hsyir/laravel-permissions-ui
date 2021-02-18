@@ -1,5 +1,5 @@
 <?php
 
 return [
-    "views-extends" => "back.layout",
+    "views-namespace" => "permissions::"
 ];

@@ -16,7 +16,7 @@ class RoleController extends Controller
     public function index()
     {
         $roles = Role::all();
-        return view("back.roles.all", compact("roles"));
+        return view("permissions::roles.all", compact("roles"));
     }
 
     /**
@@ -55,7 +55,7 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        return view("back.roles.show",compact("role"));
+        return view("permissions::roles.show",compact("role"));
     }
 
     /**
@@ -114,6 +114,5 @@ class RoleController extends Controller
 
         return self::redirectBackWithSuccess("انجام شد");
     }
-
 
 }

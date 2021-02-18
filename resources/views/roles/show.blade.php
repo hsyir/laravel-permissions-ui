@@ -10,7 +10,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    asd
+                    
                 </div>
                 <div class="card-body">
                     <table class="table">
@@ -100,7 +100,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    @include("back.roles.permissionsList",["role"=>$role])
+                                    @include("permissions::roles.permissionsList",["role"=>$role])
                                 </div>
                             </div>
                         </div>

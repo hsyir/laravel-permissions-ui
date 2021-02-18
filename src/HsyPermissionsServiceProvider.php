@@ -5,20 +5,19 @@ namespace Hsy\Permissions;
 
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 class HsyPermissionsServiceProvider extends ServiceProvider
 {
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../database/migrations/' => database_path('migrations')
+            __DIR__ . '/../database/migrations/2021_02_17_183628_create_permission_tables.php.stub' => database_path('migrations') . "/2021_02_17_183628_create_permission_tables.php"
         ], 'migrations');
 
         $this->publishes([
-            __DIR__ . '/../config/permissions.php' => config_path('permissions.php'),
+            __DIR__ . '/../config/permissions-ui.php' => config_path('permissions-ui.php'),
         ], 'config');
-
-
     }
 
     public function register()
@@ -76,6 +75,6 @@ class HsyPermissionsServiceProvider extends ServiceProvider
 
     private function registerConfigs()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/permissions.php', 'permissions');
+        $this->mergeConfigFrom(__DIR__ . '/../config/permissions-ui.php', 'permissions-ui');
     }
 }

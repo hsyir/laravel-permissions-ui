@@ -11,13 +11,7 @@ class HsyPermissionsServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->publishes([
-            __DIR__ . '/../database/migrations/2021_02_17_183628_create_permission_tables.php.stub' => database_path('migrations') . "/2021_02_17_183628_create_permission_tables.php"
-        ], 'migrations');
 
-        $this->publishes([
-            __DIR__ . '/../config/permissions-ui.php' => config_path('permissions-ui.php'),
-        ], 'config');
     }
 
     public function register()
@@ -33,18 +27,10 @@ class HsyPermissionsServiceProvider extends ServiceProvider
     protected function registerResources()
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'permissions');
-        $this->registerFacades();
         $this->registerRoutes();
         $this->registerConfigs();
     }
 
-
-    private function registerFacades()
-    {
-        $this->app->singleton("Permissions", function () {
-            return new Permissions;
-        });
-    }
 
     /**
      * Register the package routes.
@@ -69,7 +55,7 @@ class HsyPermissionsServiceProvider extends ServiceProvider
             'namespace' => 'Hsy\Permissions\Http\Controllers',
             'prefix' => "permissions",
             'middleware' => ['web'],
-            "as"=>"permissions.",
+            "as" => "permissions.",
         ];
     }
 

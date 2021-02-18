@@ -31,5 +31,14 @@
         "Hsy\\Permissions\\HsyPermissionsServiceProvider"
       ]
     }
+  },
+  "require-dev": {
+    "orchestra/testbench": "6.0",
+    "laravel/legacy-factories": "^1.0.4"
+  },
+  "scripts": {
+    "test": "php vendor/phpunit/phpunit/phpunit",
+    "test-debug": "php vendor/phpunit/phpunit/phpunit --debug",
+    "test-coverage": "php vendor/phpunit/phpunit/phpunit"
   }
 }

@@ -1,4 +1,4 @@
-@extends(config("permissions-ui.views-extends"))
+@extends("permissions::layout")
 
 @section("content")
 
@@ -10,7 +10,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    
+
                 </div>
                 <div class="card-body">
                     <table class="table">

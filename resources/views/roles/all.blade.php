@@ -1,4 +1,4 @@
-@extends(config("permissions-ui.views-extends"))
+@extends("permissions::layout")
 
 @section("content")
     <x-success></x-success>

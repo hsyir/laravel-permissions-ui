@@ -28,7 +28,6 @@ class HsyPermissionsServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'permissions');
         $this->registerRoutes();
-        $this->registerConfigs();
     }
 
 
@@ -59,8 +58,5 @@ class HsyPermissionsServiceProvider extends ServiceProvider
         ];
     }
 
-    private function registerConfigs()
-    {
-        $this->mergeConfigFrom(__DIR__ . '/../config/permissions-ui.php', 'permissions-ui');
-    }
+
 }

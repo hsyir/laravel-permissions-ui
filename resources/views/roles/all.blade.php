@@ -43,7 +43,7 @@
                 <div class="card-body">
 
                     <x-errors></x-errors>
-                    <form action="{{ route("permissions.roles.attachPermission",$role) }}" method="post">
+                    <form action="{{ route("permissions.roles.store") }}" method="post">
                         @csrf
 
                         <div class="row">

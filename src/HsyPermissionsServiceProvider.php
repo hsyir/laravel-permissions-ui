@@ -4,6 +4,8 @@
 namespace Hsy\Permissions;
 
 
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
@@ -12,6 +14,10 @@ class HsyPermissionsServiceProvider extends ServiceProvider
     public function boot()
     {
 
+
+        $this->publishes([
+            __DIR__ . '/../config/permissions-ui.php' => config_path('permissions-ui.php'),
+        ], 'config');
     }
 
     public function register()
@@ -27,6 +33,7 @@ class HsyPermissionsServiceProvider extends ServiceProvider
     protected function registerResources()
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'permissions');
+        $this->registerConfigs();
         $this->registerRoutes();
     }
 
@@ -50,13 +57,24 @@ class HsyPermissionsServiceProvider extends ServiceProvider
      */
     protected function routeConfiguration()
     {
+
+        $middlewares = ["web"];
+
+        if(config("permissions-ui.restricted")){
+            $middlewares[]="can:manage-permissions";
+        }
+
         return [
             'namespace' => 'Hsy\Permissions\Http\Controllers',
             'prefix' => "permissions",
-            'middleware' => ['web'],
+            'middleware' => $middlewares,
             "as" => "permissions.",
         ];
     }
 
+    private function registerConfigs()
+    {
+        $this->mergeConfigFrom(__DIR__ . '/../config/permissions-ui.php', 'permissions-ui');
+    }
 
 }

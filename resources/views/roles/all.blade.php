@@ -43,7 +43,6 @@
                 <div class="card-body">
 
                     <x-errors></x-errors>
-{{--
                     <form action="{{ route("permissions.roles.attachPermission",$role) }}" method="post">
                         @csrf
 
@@ -61,7 +60,7 @@
                                 <input type="submit" class="btn btn-primary" value="ذخیره">
                             </div>
                         </div>
-                    </form>--}}
+                    </form>
                 </div>
             </div>
         </div>

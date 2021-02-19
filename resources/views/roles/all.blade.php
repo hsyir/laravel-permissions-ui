@@ -20,12 +20,12 @@
                             <tr>
                                 <td>{{ $role->name }}</td>
                                 <td>
-                                    <form action="{{ route("admin.roles.destroy",$role) }}" method="post">
+                                    <form action="{{ route("permissions.roles.destroy",$role) }}" method="post">
                                         @csrf
                                         @method("DELETE")
 
                                         <input type="submit" class="btn-link btn" value="حذف">
-                                        <a  href="{{ route("admin.roles.show",$role) }}" class="btn btn-link">نمایش</a>
+                                        <a  href="{{ route("permissions.roles.show",$role) }}" class="btn btn-link">نمایش</a>
                                     </form>
                                 </td>
                             </tr>
@@ -44,7 +44,7 @@
 
                     <x-errors></x-errors>
 {{--
-                    <form action="{{ route("admin.roles.attachPermission",$role) }}" method="post">
+                    <form action="{{ route("permissions.roles.attachPermission",$role) }}" method="post">
                         @csrf
 
                         <div class="row">

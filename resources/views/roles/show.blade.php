@@ -47,7 +47,7 @@
                             <tr>
                                 <td>{{ $user->name }}</td>
                                 <td>
-                                    <form action="{{ route("admin.roles.removeUser",$role) }}" method="post">
+                                    <form action="{{ route("permissions.roles.removeUser",$role) }}" method="post">
                                         @csrf
                                         @method("DELETE")
                                         <input type="hidden" name="user_id" value="{{ $user->id }}">
@@ -65,7 +65,7 @@
                 </div>
                 <div class="card-body">
 
-                    <form action="{{ route("admin.roles.addUser",$role) }}" method="post">
+                    <form action="{{ route("permissions.roles.addUser",$role) }}" method="post">
                         @csrf
                         <div class="row">
                             <div class="col">
@@ -95,7 +95,7 @@
 
                     <x-errors></x-errors>
 
-                    <form action="{{ route("admin.roles.syncPermissions",$role) }}" method="post">
+                    <form action="{{ route("permissions.roles.syncPermissions",$role) }}" method="post">
                         @csrf
                         <div class="row">
                             <div class="col">

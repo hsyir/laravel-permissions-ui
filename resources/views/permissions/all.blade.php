@@ -20,7 +20,7 @@
                             <tr>
                                 <td>{{ $permission->name }}</td>
                                 <td>
-                                    <form action="{{ route("admin.permissions.destroy",$permission) }}" method="post">
+                                    <form action="{{ route("permissions.permissions.destroy",$permission) }}" method="post">
                                         @csrf
                                         @method("DELETE")
 
@@ -43,7 +43,7 @@
 
                     <x-errors></x-errors>
 
-                    <form action="{{ route("admin.permissions.store") }}" method="post">
+                    <form action="{{ route("permissions.permissions.store") }}" method="post">
                         @csrf
 
                         <div class="row">
